@@ -9,7 +9,8 @@ import { Book } from '../common/book';
 })
 export class BookService {
 
-  private baseUrl = "http://localhost:8080/api/v1/books";
+  // private baseUrl = "http://localhost:8080/api/v1/books?size=100";
+  private baseUrl = "http://localhost:8080/api/v1/books"; // By default Spring Data Rest  returns 20 records
 
   constructor(private httpClient: HttpClient) { }
 
