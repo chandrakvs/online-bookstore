@@ -10,10 +10,13 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import com.chandra.onlinebookstore.entity.Book;
 
 //@CrossOrigin("*") // allows all requests from outside
-@CrossOrigin("http://localhost:4200")
+//@CrossOrigin("http://localhost:4200")
 public interface BookRepository extends JpaRepository<Book, Long> {
 	
 	@RestResource(path = "categoryid")
 	Page<Book> findByCategoryId(@Param("id") Long id,Pageable pagable);
+	
+	@RestResource(path = "searchbykeyword")
+	Page<Book> findByNameContaining(@Param("name") String keyword,Pageable pagable);
 
 }
