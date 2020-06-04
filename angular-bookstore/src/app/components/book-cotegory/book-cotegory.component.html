@@ -1,0 +1,10 @@
+<div class="list-group">
+    <!-- Below one is using interpolation for attaching id field and name property -->
+    <!--   <a routerLink="/category/{{category.id}}" *ngFor="let category of bookCategories" class="list-group-item"
+        routerLinkActive="bg-primary text-white font-weight-bold">{{category.categoryName}}</a>
+    -->
+    <!-- Below one is property binding for attaching id field -->
+    <a [routerLink]="'/category/'+category.id" *ngFor="let category of bookCategories" class="list-group-item"
+        routerLinkActive="bg-primary text-white font-weight-bold">{{category.categoryName}}</a>
+
+</div>
